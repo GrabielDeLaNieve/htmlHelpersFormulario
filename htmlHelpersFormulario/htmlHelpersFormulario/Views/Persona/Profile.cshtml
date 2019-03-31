@@ -1,0 +1,30 @@
+﻿@model htmlHelpersFormulario.Models.Persona
+<br />
+<div class="col-lg-12 col-sm-12 col-md-12">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="text-primary">Gracias, @Model.Name</h1>
+            <div>
+                Te hemos enviado un correo de validacion al correo @Model.Email pero es mentira, por que no tenemos un servidor de SMTP para mandar correos ya que eso cuesta dinero y somos gente pobre para obtener informacion contrate Sengrid o otro servicio de esta indole.
+            </div>
+            <h1 class="text-dark">He aqui sus datos @Model.Name</h1>
+            <h6 class="text-dark">Numero Nacional de Identidad: @Model.IdNational</h6>
+            <h6 class="text-dark">Nombre: @Model.Name</h6>
+            <h6 class="text-dark">Apellido: @Model.LastName</h6>
+            <h6 class="text-dark"> Edad: @Model.Age</h6>
+            <h6 class="text-dark">Correo Electronico: @Model.Email</h6>
+            <h6 class="text-dark">Genero: @Model.Genero</h6>
+            <h6 class="text-dark">Estado:  @Model.Status</h6>
+            <h6 class="text-dark">
+                Hobbys: @for (var x = 0; x < Model.Hobbys.Length; x++)
+                {
+                    if (@Model.Hobbys[x] != "false")
+                    {
+                        @Model.Hobbys[x]
+                        <spam>,</spam>
+                    }
+                }
+            </h6>
+        </div>
+    </div>
+</div>
