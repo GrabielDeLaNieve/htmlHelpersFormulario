@@ -16,7 +16,7 @@ namespace htmlHelpersFormulario.Controllers
         }
 
 
-        public ActionResult Profile(Persona user)
+        public ActionResult Resultados(Persona user)
         {
             return View(user);
         }
@@ -35,7 +35,7 @@ namespace htmlHelpersFormulario.Controllers
             {
                 return View(user);
             }
-            return View("Profile", user);
+            return View("Resultados", user);
         }
     }
 }

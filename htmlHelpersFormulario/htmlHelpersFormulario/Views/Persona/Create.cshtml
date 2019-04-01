@@ -20,50 +20,51 @@
     <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
-                <h3 class="text-primary">Registro</h3>
+                <h3 class="text-success">Registro</h3>
 
 
                 <div class="form-group">
-                    <b>@Html.LabelFor(x => Model.Name, new { @class = "control-label" }) </b>
-                    @Html.TextBoxFor(x => Model.Name, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    <b>@Html.LabelFor(x => Model.Nombre, new { @class = "control-label" }) </b>
+                    @Html.TextBoxFor(x => Model.Nombre, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="form-group">
-                    <b>    @Html.LabelFor(x => Model.Age, new { @class = "control-label" })  </b>
-                    @Html.DropDownListFor(x => Model.Age, EdadesPermitidas, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                    <b>    @Html.LabelFor(x => Model.Edad, new { @class = "control-label" })  </b>
+                    @Html.DropDownListFor(x => Model.Edad, EdadesPermitidas, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Edad, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="form-group">
-                    <b>   @Html.LabelFor(x => Model.PhoneNumber, new { @class = "control-label" }) </b>
-                    @Html.TextBoxFor(x => Model.PhoneNumber, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                    <b>   @Html.LabelFor(x => Model.Tel, new { @class = "control-label" }) </b>
+                    @Html.TextBoxFor(x => Model.Tel, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Tel, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="form-group">
                     <b>@Html.LabelFor(x => Model.Genero, new { @class = "control-label" })</b>
                     @Html.DropDownList("Genero", new List<SelectListItem>{
                         new SelectListItem{Text="Masculino", Value = "Masculino"},
-                        new SelectListItem{Text="Femenino", Value = "Femenino"}},
+                         new SelectListItem{Text="Femina", Value = "femina"},
+                        new SelectListItem{Text="Otros", Value = "otros"}},
                         " Seleccionar Género ", new { @class = "form-control" })
                 </div>
                 
-                <h3 class="text-primary">Estado Civil</h3>
+                <h3 class="text-success">Estado Civil</h3>
 
                 <div class="form-group">
                    
                     Casado
-                    @Html.RadioButtonFor(model => model.Status, "Casado")
+                    @Html.RadioButtonFor(model => model.Estado, "Casado")
                     <br />
                     Soltero
-                    @Html.RadioButtonFor(model => model.Status, "Soltero")
+                    @Html.RadioButtonFor(model => model.Estado, "Soltero")
                     <br />
                     Viudo
-                    @Html.RadioButtonFor(model => model.Status, "Viudo")
+                    @Html.RadioButtonFor(model => model.Estado, "Viudo")
                     <br />
                     Union Libre
-                    @Html.RadioButtonFor(model => model.Status, "Union Libre")
+                    @Html.RadioButtonFor(model => model.Estado, "Union Libre")
                 </div>
                 <div>
                     @Html.ValidationSummary()
@@ -75,17 +76,17 @@
 
     <div class="col-lg-6">
 
-        <h3 class="text-primary">Registro</h3>
+        <h3 class="text-success">Registro</h3>
         <div class="form-group">
-            <b>  @Html.LabelFor(x => Model.LastName, new { @class = "control-label" })</b>
-            @Html.TextBoxFor(x => Model.LastName, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+            <b>  @Html.LabelFor(x => Model.Apellido, new { @class = "control-label" })</b>
+            @Html.TextBoxFor(x => Model.Apellido, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
-            <b>@Html.LabelFor(x => Model.IdNational, new { @class = "control-label" })</b>
-            @Html.TextBoxFor(x => Model.IdNational, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.IdNational, "", new { @class = "text-danger" })
+            <b>@Html.LabelFor(x => Model.Cedula, new { @class = "control-label" })</b>
+            @Html.TextBoxFor(x => Model.Cedula, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Cedula, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
@@ -96,13 +97,13 @@
 
         <h3 class="text-primary">Pasatiempo</h3>
         <div class="form-group">
-            @Html.CheckBox("Hobbys[]", false, new { @value = "Jugar" })
+            @Html.CheckBox("TiempoLibre[]", false, new { @value = "Jugar" })
             Programar *
-            @Html.CheckBox("Hobbys[]", false, new { @value = "Viajar" })
+            @Html.CheckBox("TiempoLibre[]", false, new { @value = "Viajar" })
             Leer *
-            @Html.CheckBox("Hobbys[]", false, new { @value = "Leer" })
+            @Html.CheckBox("TiempoLibre[]", false, new { @value = "Leer" })
             Comer *
-            @Html.CheckBox("Hobbys[]", false, new { @value = "Vivir" })
+            @Html.CheckBox("TiempoLibre[]", false, new { @value = "Vivir" })
             Dormir
         </div>
 

@@ -12,19 +12,19 @@ namespace htmlHelpersFormulario.Models
         [DisplayName("Cedula")]
         [MinLength(10)]
         [Required]
-        public string IdNational { get; set; }
+        public string Cedula { get; set; }
 
         [DisplayName("Nombre")]
         [MinLength(10)]
         [Required]
-        public string Name { get; set; }
+        public string Nombre { get; set; }
 
         [DisplayName("Apellido")]
         [MinLength(10)]
         [Required]
-        public string LastName { get; set; }
+        public string Apellido { get; set; }
 
-        [DisplayName("Correo Electronico")]
+        [DisplayName("Email")]
         [EmailAddress]
         [Required]
         public string Email { get; set; }
@@ -35,20 +35,20 @@ namespace htmlHelpersFormulario.Models
 
         [DisplayName("Edad")]
         [Range(15, 100)]
-        public int Age { get; set; }
+        public int Edad { get; set; }
 
         [DisplayName("Estado Civil")]
-        public string Status { get; set; }
+        public string Estado { get; set; }
 
         [DisplayName("Carrera")]
-        public string Career { get; set; }
+        public string Carrera { get; set; }
 
-        [DisplayName("Numero De Telefono")]
+        [DisplayName("Tel")]
         [Required]
-        public string PhoneNumber { get; set; }
+        public string Tel { get; set; }
 
-        [DisplayName("Hobbys")]
-        public string[] Hobbys { get; set; }
+        [DisplayName("Tiempo Libre")]
+        public string[] TiempoLibre { get; set; }
 
         [DisplayName("Género:")]
         public string Genero { get; set; }

@@ -1,0 +1,28 @@
+﻿@model htmlHelpersFormulario.Models.Persona
+
+<div class="col-lg-12 col-sm-12 col-md-12">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="text-success">Resultados</h1>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Nombre: @Model.Nombre</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Apellido: @Model.Apellido</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-success">Edad: @Model.Edad</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-danger">Email: @Model.Email</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Genero: @Model.Genero</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-info">Estado Civil: @Model.Estado</a>
+                   
+                </div>
+
+                TiempoLibre: @for (var x = 0; x < Model.TiempoLibre.Length; x++)
+                {
+                    if (@Model.TiempoLibre[x] != "false")
+                    {
+                        @Model.TiempoLibre[x]
+                        <spam>,</spam>
+                    }
+                }
+            </h6>
+        </div>
+    </div>
+</div>
