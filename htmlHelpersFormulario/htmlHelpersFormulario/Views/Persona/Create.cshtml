@@ -13,62 +13,46 @@
 <br />
 @using (Html.BeginForm())
 {
+
+
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="offset-lg-4 offset-md-3 col-sm-12 col-md-6 col-lg-4">
+<div class="row">
+    <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
-                <h2 class="text-primary">Registro de Usuario</h2>
-                <div class="form-group">
-                    <b>@Html.LabelFor(x => Model.IdNational, new { @class = "control-label" })</b>
-                    @Html.TextBoxFor(x => Model.IdNational, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.IdNational, "", new { @class = "text-danger" })
-                </div>
+                <h3 class="text-primary">Registro</h3>
+
+
                 <div class="form-group">
                     <b>@Html.LabelFor(x => Model.Name, new { @class = "control-label" }) </b>
                     @Html.TextBoxFor(x => Model.Name, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
 
-                </div>
-                <div class="form-group">
-                    <b>  @Html.LabelFor(x => Model.LastName, new { @class = "control-label" })</b>
-                    @Html.TextBoxFor(x => Model.LastName, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-                </div>
                 <div class="form-group">
                     <b>    @Html.LabelFor(x => Model.Age, new { @class = "control-label" })  </b>
                     @Html.DropDownListFor(x => Model.Age, EdadesPermitidas, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
                 </div>
+
                 <div class="form-group">
                     <b>   @Html.LabelFor(x => Model.PhoneNumber, new { @class = "control-label" }) </b>
                     @Html.TextBoxFor(x => Model.PhoneNumber, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group">
-                    <b>  @Html.LabelFor(x => Model.Email, new { @class = "control-label" })</b>
-                    @Html.TextBoxFor(x => Model.Email, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                </div>
+
                 <div class="form-group">
                     <b>@Html.LabelFor(x => Model.Genero, new { @class = "control-label" })</b>
                     @Html.DropDownList("Genero", new List<SelectListItem>{
                         new SelectListItem{Text="Masculino", Value = "Masculino"},
                         new SelectListItem{Text="Femenino", Value = "Femenino"}},
-         " Seleccionar Género ", new { @class = "form-control" })
+                        " Seleccionar Género ", new { @class = "form-control" })
                 </div>
+                
+                <h3 class="text-primary">Estado Civil</h3>
+
                 <div class="form-group">
-                    @Html.CheckBox("Hobbys[]", false, new { @value = "Programar" })
-                    Programar |
-                    @Html.CheckBox("Hobbys[]", false, new { @value = "Leer" })
-                    Leer |
-                    @Html.CheckBox("Hobbys[]", false, new { @value = "Comer" })
-                    Comer |
-                    @Html.CheckBox("Hobbys[]", false, new { @value = "Dormir" })
-                    Dormir
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-12" })
-                    <br />
+                   
                     Casado
                     @Html.RadioButtonFor(model => model.Status, "Casado")
                     <br />
@@ -84,9 +68,45 @@
                 <div>
                     @Html.ValidationSummary()
                 </div>
-                <input type="submit" class="btn btn-primary btn-block" value="Iniciar Sesion">
+                <input type="submit" class="btn btn-success btn-block" value="Registrar">
             </div>
         </div>
     </div>
+
+    <div class="col-lg-6">
+
+        <h3 class="text-primary">Registro</h3>
+        <div class="form-group">
+            <b>  @Html.LabelFor(x => Model.LastName, new { @class = "control-label" })</b>
+            @Html.TextBoxFor(x => Model.LastName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            <b>@Html.LabelFor(x => Model.IdNational, new { @class = "control-label" })</b>
+            @Html.TextBoxFor(x => Model.IdNational, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.IdNational, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            <b>  @Html.LabelFor(x => Model.Email, new { @class = "control-label" })</b>
+            @Html.TextBoxFor(x => Model.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+
+        <h3 class="text-primary">Pasatiempo</h3>
+        <div class="form-group">
+            @Html.CheckBox("Hobbys[]", false, new { @value = "Jugar" })
+            Programar *
+            @Html.CheckBox("Hobbys[]", false, new { @value = "Viajar" })
+            Leer *
+            @Html.CheckBox("Hobbys[]", false, new { @value = "Leer" })
+            Comer *
+            @Html.CheckBox("Hobbys[]", false, new { @value = "Vivir" })
+            Dormir
+        </div>
+
+    </div>
+</div>
 }
 
